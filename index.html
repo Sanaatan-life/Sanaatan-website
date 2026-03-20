@@ -164,10 +164,39 @@
       }
     })();
     function handleSubmit(e) {
-      e.preventDefault();
-      document.getElementById('captureForm').style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
-    }
+  e.preventDefault();
+  const email = document.getElementById('emailInput').value;
+  const btn = document.querySelector('.capture-btn');
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = 'https://life.us11.list-manage.com/subscribe/post?u=b69645ddac4866a84012a2aec&id=8629ceda79&f_id=0072d7e3f0';
+  form.target = '_blank';
+
+  const emailInput = document.createElement('input');
+  emailInput.type = 'email';
+  emailInput.name = 'EMAIL';
+  emailInput.value = email;
+
+  const honeypot = document.createElement('input');
+  honeypot.type = 'text';
+  honeypot.name = 'b_b69645ddac4866a84012a2aec_8629ceda79';
+  honeypot.tabIndex = -1;
+  honeypot.value = '';
+  honeypot.style.position = 'absolute';
+  honeypot.style.left = '-5000px';
+
+  form.appendChild(emailInput);
+  form.appendChild(honeypot);
+  document.body.appendChild(form);
+  form.submit();
+  document.body.removeChild(form);
+
+  document.getElementById('captureForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
   </script>
 </body>
 </html>
