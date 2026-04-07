@@ -76,6 +76,60 @@
       border-radius:10px;padding:20px 24px;max-width:500px;}
     .success-msg p{font-size:18px;color:var(--green);font-weight:600;margin-bottom:4px;}
     .success-msg span{font-size:15px;color:var(--muted);}
+
+    /* ── OR DIVIDER ── */
+    .or-divider{display:flex;align-items:center;gap:12px;max-width:500px;margin:20px 0;}
+    .or-divider .line{flex:1;height:1px;background:var(--border);}
+    .or-divider span{font-size:13px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+
+    /* ── WHATSAPP BUTTON ── */
+    .whatsapp-btn{
+      display:flex;align-items:center;gap:12px;
+      max-width:500px;
+      background:var(--warm-white);
+      border:1.5px solid #25D366;
+      border-radius:10px;
+      padding:14px 20px;
+      text-decoration:none;
+      font-family:'Source Serif 4',serif;
+      font-size:17px;
+      color:var(--ink-soft);
+      transition:background 0.2s,box-shadow 0.2s;
+    }
+    .whatsapp-btn:hover{background:#F0FFF4;box-shadow:0 2px 12px rgba(37,211,102,0.15);}
+    .whatsapp-icon{font-size:22px;flex-shrink:0;}
+    .whatsapp-text strong{display:block;font-size:16px;color:var(--ink);margin-bottom:2px;}
+    .whatsapp-text span{font-size:13px;color:var(--muted);}
+
+    /* ── BLOG SECTION ── */
+    .blog-section{margin-top:48px;padding-top:40px;border-top:1px solid var(--border);
+      animation:fadeUp 0.7s ease-out 0.45s both;}
+    .blog-label{font-size:12px;color:var(--gold);text-transform:uppercase;
+      letter-spacing:0.15em;margin-bottom:10px;}
+    .blog-heading{font-family:'Playfair Display',serif;font-size:22px;
+      font-weight:600;color:var(--ink);margin-bottom:6px;}
+    .blog-subtext{font-size:16px;color:var(--muted);margin-bottom:20px;line-height:1.6;}
+    .blog-card{
+      display:block;
+      background:var(--warm-white);
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:22px 24px;
+      text-decoration:none;
+      transition:border-color 0.2s,box-shadow 0.2s;
+    }
+    .blog-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(0,0,0,0.06);}
+    .blog-card-tag{font-size:12px;color:var(--gold);text-transform:uppercase;
+      letter-spacing:0.1em;margin-bottom:8px;font-weight:600;}
+    .blog-card-title{font-family:'Playfair Display',serif;font-size:19px;
+      color:var(--ink);line-height:1.4;margin-bottom:8px;}
+    .blog-card-excerpt{font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:10px;}
+    .blog-card-meta{font-size:13px;color:var(--muted);}
+    .blog-card-meta span{color:var(--gold);font-weight:600;}
+    .blog-all{display:inline-block;margin-top:14px;font-size:14px;
+      color:var(--gold);text-decoration:none;font-weight:600;}
+    .blog-all:hover{text-decoration:underline;}
+
     .launch-area{text-align:center;margin-top:48px;padding-top:32px;
       border-top:1px solid var(--border);animation:fadeUp 0.7s ease-out 0.5s both;}
     .launch-badge{display:inline-flex;align-items:center;gap:8px;
@@ -95,12 +149,15 @@
       .capture-form{flex-direction:column;}
       .capture-btn{border-left:none;border-top:2px solid var(--border);padding:14px;}
       .features{flex-direction:column;}
+      .whatsapp-btn{padding:12px 16px;}
     }
   </style>
 </head>
 <body>
   <div class="top-border"></div>
   <div class="page">
+
+    <!-- BRAND -->
     <header class="brand">
       <div class="lotus-line">
         <div class="line"></div>
@@ -115,27 +172,38 @@
       <p class="brand-devanagari">सनातन</p>
       <p class="brand-tagline">The Eternal Way</p>
     </header>
+
+    <!-- INTRO -->
     <section class="intro">
       <p class="intro-lead">Ancient wisdom for <em>modern questions.</em><br/>
       The Gita, Ramayana, and Upanishads —<br/>now in conversation with you.</p>
       <p class="intro-body">We all grew up with these sacred texts somewhere in our lives. But how often do we truly sit with them? And when a real question arises — about duty, grief, purpose, or peace — where do we turn?</p>
       <p class="intro-body">Sanaatan is being built so you can ask anything from the Hindu scriptures and receive answers grounded in the actual verses, with full citations.</p>
     </section>
+
+    <!-- FEATURES -->
     <div class="features">
       <div class="feature-pill"><span class="icon">📖</span><span>Bhagavad Gita</span></div>
       <div class="feature-pill"><span class="icon">🏹</span><span>Ramayana</span></div>
       <div class="feature-pill"><span class="icon">🪔</span><span>Upanishads</span></div>
       <div class="feature-pill"><span class="icon">✦</span><span>Cited answers</span></div>
     </div>
+
+    <!-- VERSE -->
     <div class="verse-block">
       <p class="verse-sanskrit">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन</p>
       <p class="verse-english">"You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions."</p>
       <p class="verse-source">Bhagavad Gita · Chapter 2, Verse 47</p>
     </div>
+
     <hr class="divider" />
+
+    <!-- CAPTURE SECTION -->
     <section class="capture-section">
       <h2 class="capture-heading">Be among the first to know</h2>
       <p class="capture-subtext">We are building carefully and will launch soon. Leave your email and we will reach out personally when Sanaatan is ready.</p>
+
+      <!-- EMAIL FORM -->
       <form id="captureForm" onsubmit="handleSubmit(event)">
         <div class="capture-form">
           <input class="capture-input" type="email" id="emailInput"
@@ -148,16 +216,56 @@
         <span>We will reach out personally when Sanaatan launches.</span>
       </div>
       <p class="capture-note">No spam. One email when we launch. That is it.</p>
+
+      <!-- OR DIVIDER -->
+      <div class="or-divider">
+        <div class="line"></div>
+        <span>or</span>
+        <div class="line"></div>
+      </div>
+
+      <!-- WHATSAPP BUTTON -->
+      <!-- IMPORTANT: Replace +919999999999 with your actual WhatsApp Business number -->
+      <a href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20early%20access%20to%20Sanaatan%20%F0%9F%99%8F"
+         target="_blank" class="whatsapp-btn">
+        <span class="whatsapp-icon">💬</span>
+        <div class="whatsapp-text">
+          <strong>Get updates on WhatsApp</strong>
+          <span>Tap to send us a message — we'll add you to the list</span>
+        </div>
+      </a>
+
     </section>
+
+    <!-- BLOG SECTION -->
+    <section class="blog-section">
+      <p class="blog-label">Scripture Wisdom</p>
+      <h2 class="blog-heading">From the Blog</h2>
+      <p class="blog-subtext">Cited answers from the Gita on life's deepest questions — with Sanskrit and practical guidance.</p>
+
+      <a href="/blog/what-does-bhagavad-gita-say-about-fear/" class="blog-card">
+        <div class="blog-card-tag">Bhagavad Gita · Fear</div>
+        <div class="blog-card-title">What Does the Bhagavad Gita Say About Fear?</div>
+        <div class="blog-card-excerpt">Four cited verses with Sanskrit, transliteration, and practical guidance for modern life — BG 2.14, 2.19, 2.62, and 16.1.</div>
+        <div class="blog-card-meta">April 2026 · 5 min read · <span>Read →</span></div>
+      </a>
+
+      <a href="/blog" class="blog-all">View all posts →</a>
+    </section>
+
+    <!-- LAUNCH AREA -->
     <div class="launch-area">
       <div class="launch-badge"><span class="pulse-dot"></span>Launching 2026</div>
       <p class="footer-links">
         <a href="mailto:admin@sanaatan.life">admin@sanaatan.life</a>
         &nbsp;·&nbsp; sanaatan.life
+        &nbsp;·&nbsp; <a href="https://app.sanaatan.life">Try the app →</a>
       </p>
     </div>
+
   </div>
   <div class="bottom-border"></div>
+
   <script>
     function handleSubmit(e) {
       e.preventDefault();
