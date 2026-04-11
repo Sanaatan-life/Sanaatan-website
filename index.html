@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanaatan — The Eternal Way</title>
-  <meta name="description" content="Ancient wisdom for modern life. Sanaatan is coming soon." />
+  <meta name="description" content="Ask anything from the Bhagavad Gita and Upanishads. Get cited answers grounded in actual verses." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
@@ -40,6 +40,25 @@
       color:var(--ink-soft);line-height:1.55;margin-bottom:28px;}
     .intro-lead em{font-style:normal;color:var(--gold);font-weight:600;}
     .intro-body{font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:16px;}
+
+    /* CTA BUTTON */
+    .cta-wrap{text-align:center;margin:36px 0;animation:fadeUp 0.7s ease-out 0.2s both;}
+    .cta-btn{
+      display:inline-block;
+      background:var(--gold);
+      color:white;
+      font-family:'Playfair Display',serif;
+      font-size:18px;
+      font-weight:600;
+      padding:16px 40px;
+      border-radius:10px;
+      text-decoration:none;
+      transition:background 0.2s,box-shadow 0.2s;
+      letter-spacing:0.02em;
+    }
+    .cta-btn:hover{background:var(--gold-mid);box-shadow:0 4px 20px rgba(139,96,0,0.25);}
+    .cta-sub{font-size:14px;color:var(--muted);margin-top:10px;}
+
     .features{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0;animation:fadeUp 0.7s ease-out 0.25s both;}
     .feature-pill{display:flex;align-items:center;gap:8px;background:var(--warm-white);
       border:1px solid var(--border);border-radius:8px;padding:10px 18px;
@@ -53,7 +72,50 @@
     .verse-english{font-size:18px;color:var(--ink-soft);font-style:italic;
       line-height:1.75;margin-bottom:10px;}
     .verse-source{font-size:14px;color:var(--muted);letter-spacing:0.05em;}
-    .capture-section{animation:fadeUp 0.7s ease-out 0.4s both;}
+
+    /* PRICING */
+    .pricing-section{margin-top:48px;padding-top:40px;border-top:1px solid var(--border);
+      animation:fadeUp 0.7s ease-out 0.35s both;}
+    .pricing-label{font-size:12px;color:var(--gold);text-transform:uppercase;
+      letter-spacing:0.15em;margin-bottom:10px;}
+    .pricing-heading{font-family:'Playfair Display',serif;font-size:22px;
+      font-weight:600;color:var(--ink);margin-bottom:6px;}
+    .pricing-subtext{font-size:16px;color:var(--muted);margin-bottom:24px;line-height:1.6;}
+    .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+    .pricing-card{
+      background:var(--warm-white);
+      border:1.5px solid var(--border);
+      border-radius:10px;
+      padding:20px;
+      text-align:center;
+    }
+    .pricing-card.featured{border-color:var(--gold);background:#FFF8EC;}
+    .pricing-card-name{font-size:13px;color:var(--muted);text-transform:uppercase;
+      letter-spacing:0.1em;margin-bottom:6px;}
+    .pricing-card-price{font-family:'Playfair Display',serif;font-size:26px;
+      font-weight:700;color:var(--ink);margin-bottom:4px;}
+    .pricing-card-price span{font-size:14px;font-weight:400;color:var(--muted);}
+    .pricing-card-desc{font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+    .pricing-card-btn{
+      display:block;
+      background:var(--gold);
+      color:white;
+      font-family:'Source Serif 4',serif;
+      font-size:14px;
+      font-weight:600;
+      padding:10px 16px;
+      border-radius:7px;
+      text-decoration:none;
+      transition:background 0.2s;
+    }
+    .pricing-card-btn:hover{background:var(--gold-mid);}
+    .pricing-card-btn.free{background:transparent;color:var(--gold);
+      border:1.5px solid var(--gold);}
+    .pricing-card-btn.free:hover{background:#FFF3DC;}
+    .pricing-note{font-size:13px;color:var(--muted);text-align:center;margin-top:8px;}
+
+    .capture-section{animation:fadeUp 0.7s ease-out 0.4s both;margin-top:48px;
+      padding-top:40px;border-top:1px solid var(--border);}
     .capture-heading{font-family:'Playfair Display',serif;font-size:24px;
       font-weight:600;color:var(--ink);margin-bottom:10px;}
     .capture-subtext{font-size:17px;color:var(--muted);margin-bottom:24px;line-height:1.7;}
@@ -76,32 +138,19 @@
       border-radius:10px;padding:20px 24px;max-width:500px;}
     .success-msg p{font-size:18px;color:var(--green);font-weight:600;margin-bottom:4px;}
     .success-msg span{font-size:15px;color:var(--muted);}
-
-    /* ── OR DIVIDER ── */
     .or-divider{display:flex;align-items:center;gap:12px;max-width:500px;margin:20px 0;}
     .or-divider .line{flex:1;height:1px;background:var(--border);}
     .or-divider span{font-size:13px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-
-    /* ── WHATSAPP BUTTON ── */
     .whatsapp-btn{
-      display:flex;align-items:center;gap:12px;
-      max-width:500px;
-      background:var(--warm-white);
-      border:1.5px solid #25D366;
-      border-radius:10px;
-      padding:14px 20px;
-      text-decoration:none;
-      font-family:'Source Serif 4',serif;
-      font-size:17px;
-      color:var(--ink-soft);
-      transition:background 0.2s,box-shadow 0.2s;
+      display:flex;align-items:center;gap:12px;max-width:500px;
+      background:var(--warm-white);border:1.5px solid #25D366;border-radius:10px;
+      padding:14px 20px;text-decoration:none;font-family:'Source Serif 4',serif;
+      font-size:17px;color:var(--ink-soft);transition:background 0.2s,box-shadow 0.2s;
     }
     .whatsapp-btn:hover{background:#F0FFF4;box-shadow:0 2px 12px rgba(37,211,102,0.15);}
     .whatsapp-icon{font-size:22px;flex-shrink:0;}
     .whatsapp-text strong{display:block;font-size:16px;color:var(--ink);margin-bottom:2px;}
     .whatsapp-text span{font-size:13px;color:var(--muted);}
-
-    /* ── BLOG SECTION ── */
     .blog-section{margin-top:48px;padding-top:40px;border-top:1px solid var(--border);
       animation:fadeUp 0.7s ease-out 0.45s both;}
     .blog-label{font-size:12px;color:var(--gold);text-transform:uppercase;
@@ -109,15 +158,9 @@
     .blog-heading{font-family:'Playfair Display',serif;font-size:22px;
       font-weight:600;color:var(--ink);margin-bottom:6px;}
     .blog-subtext{font-size:16px;color:var(--muted);margin-bottom:20px;line-height:1.6;}
-    .blog-card{
-      display:block;
-      background:var(--warm-white);
-      border:1px solid var(--border);
-      border-radius:10px;
-      padding:22px 24px;
-      text-decoration:none;
-      transition:border-color 0.2s,box-shadow 0.2s;
-    }
+    .blog-card{display:block;background:var(--warm-white);border:1px solid var(--border);
+      border-radius:10px;padding:22px 24px;text-decoration:none;
+      transition:border-color 0.2s,box-shadow 0.2s;}
     .blog-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(0,0,0,0.06);}
     .blog-card-tag{font-size:12px;color:var(--gold);text-transform:uppercase;
       letter-spacing:0.1em;margin-bottom:8px;font-weight:600;}
@@ -129,15 +172,8 @@
     .blog-all{display:inline-block;margin-top:14px;font-size:14px;
       color:var(--gold);text-decoration:none;font-weight:600;}
     .blog-all:hover{text-decoration:underline;}
-
-    .launch-area{text-align:center;margin-top:48px;padding-top:32px;
+    .footer-area{text-align:center;margin-top:48px;padding-top:32px;
       border-top:1px solid var(--border);animation:fadeUp 0.7s ease-out 0.5s both;}
-    .launch-badge{display:inline-flex;align-items:center;gap:8px;
-      background:var(--warm-white);border:1px solid var(--border);
-      border-radius:20px;padding:8px 20px;font-size:14px;color:var(--muted);
-      letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;}
-    .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);
-      animation:pulse 2.5s ease-in-out infinite;}
     .footer-links{font-size:14px;color:var(--muted);}
     .footer-links a{color:var(--gold);text-decoration:none;}
     .footer-links a:hover{text-decoration:underline;}
@@ -150,6 +186,7 @@
       .capture-btn{border-left:none;border-top:2px solid var(--border);padding:14px;}
       .features{flex-direction:column;}
       .whatsapp-btn{padding:12px 16px;}
+      .pricing-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -176,17 +213,23 @@
     <!-- INTRO -->
     <section class="intro">
       <p class="intro-lead">Ancient wisdom for <em>modern questions.</em><br/>
-      The Gita, Ramayana, and Upanishads —<br/>now in conversation with you.</p>
+      The Bhagavad Gita and Upanishads —<br/>now in conversation with you.</p>
       <p class="intro-body">We all grew up with these sacred texts somewhere in our lives. But how often do we truly sit with them? And when a real question arises — about duty, grief, purpose, or peace — where do we turn?</p>
-      <p class="intro-body">Sanaatan is being built so you can ask anything from the Hindu scriptures and receive answers grounded in the actual verses, with full citations.</p>
+      <p class="intro-body">Sanaatan lets you ask anything from the Hindu scriptures and receive answers grounded in the actual verses, with full citations in Sanskrit and English. Unlike a general AI, every answer is sourced directly from scripture.</p>
     </section>
+
+    <!-- PRIMARY CTA -->
+    <div class="cta-wrap">
+      <a href="https://app.sanaatan.life" class="cta-btn">Try it free →</a>
+      <p class="cta-sub">3 free questions every day. No signup required.</p>
+    </div>
 
     <!-- FEATURES -->
     <div class="features">
       <div class="feature-pill"><span class="icon">📖</span><span>Bhagavad Gita</span></div>
-      <div class="feature-pill"><span class="icon">🏹</span><span>Ramayana</span></div>
       <div class="feature-pill"><span class="icon">🪔</span><span>Upanishads</span></div>
       <div class="feature-pill"><span class="icon">✦</span><span>Cited answers</span></div>
+      <div class="feature-pill"><span class="icon">देव</span><span>Sanskrit verses</span></div>
     </div>
 
     <!-- VERSE -->
@@ -198,12 +241,50 @@
 
     <hr class="divider" />
 
+    <!-- PRICING -->
+    <section class="pricing-section">
+      <p class="pricing-label">Simple Pricing</p>
+      <h2 class="pricing-heading">Start free. Go deeper when ready.</h2>
+      <p class="pricing-subtext">All prices GST inclusive. Cancel anytime.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card-name">Free</div>
+          <div class="pricing-card-price">₹0</div>
+          <div class="pricing-card-desc">3 questions per day. Always free.</div>
+          <a href="https://app.sanaatan.life" class="pricing-card-btn free">Start free</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card-name">Starter Pack</div>
+          <div class="pricing-card-price">₹99</div>
+          <div class="pricing-card-desc">15 questions. One-time, no expiry.</div>
+          <a href="https://rzp.io/rzp/SntDwUYi" class="pricing-card-btn" target="_blank">Get started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card-name">Daily</div>
+          <div class="pricing-card-price">₹299 <span>/month</span></div>
+          <div class="pricing-card-desc">10 questions per day.</div>
+          <a href="https://rzp.io/rzp/2NowaMx" class="pricing-card-btn" target="_blank">Subscribe</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card-name">Unlimited</div>
+          <div class="pricing-card-price">₹499 <span>/month</span></div>
+          <div class="pricing-card-desc">Unlimited questions. Best for daily practice.</div>
+          <a href="https://rzp.io/rzp/apoetBwM" class="pricing-card-btn" target="_blank">Subscribe</a>
+        </div>
+      </div>
+      <div class="pricing-card featured" style="margin-bottom:8px;">
+        <div class="pricing-card-name">Annual</div>
+        <div class="pricing-card-price">₹2,999 <span>/year</span></div>
+        <div class="pricing-card-desc">Unlimited questions. Save 50% vs monthly.</div>
+        <a href="https://rzp.io/rzp/hlZLeN68" class="pricing-card-btn" target="_blank">Best value</a>
+      </div>
+      <p class="pricing-note">Questions? Write to <a href="mailto:admin@sanaatan.life" style="color:var(--gold)">admin@sanaatan.life</a></p>
+    </section>
+
     <!-- CAPTURE SECTION -->
     <section class="capture-section">
-      <h2 class="capture-heading">Be among the first to know</h2>
-      <p class="capture-subtext">We are building carefully and will launch soon. Leave your email and we will reach out personally when Sanaatan is ready.</p>
-
-      <!-- EMAIL FORM -->
+      <h2 class="capture-heading">Stay connected</h2>
+      <p class="capture-subtext">Get a daily verse and updates on new scriptures being added.</p>
       <form id="captureForm" onsubmit="handleSubmit(event)">
         <div class="capture-form">
           <input class="capture-input" type="email" id="emailInput"
@@ -216,16 +297,11 @@
         <span>We will reach out personally when Sanaatan launches.</span>
       </div>
       <p class="capture-note">No spam. One email when we launch. That is it.</p>
-
-      <!-- OR DIVIDER -->
       <div class="or-divider">
         <div class="line"></div>
         <span>or</span>
         <div class="line"></div>
       </div>
-
-      <!-- WHATSAPP BUTTON -->
-      <!-- IMPORTANT: Replace +919999999999 with your actual WhatsApp Business number -->
       <a href="https://wa.me/919903054094?text=Hi%2C%20I%20want%20early%20access%20to%20Sanaatan%20%F0%9F%99%8F"
          target="_blank" class="whatsapp-btn">
         <span class="whatsapp-icon">💬</span>
@@ -234,7 +310,6 @@
           <span>Tap to send us a message — we'll add you to the list</span>
         </div>
       </a>
-
     </section>
 
     <!-- BLOG SECTION -->
@@ -242,20 +317,17 @@
       <p class="blog-label">Scripture Wisdom</p>
       <h2 class="blog-heading">From the Blog</h2>
       <p class="blog-subtext">Cited answers from the Gita on life's deepest questions — with Sanskrit and practical guidance.</p>
-
       <a href="/blog/what-does-bhagavad-gita-say-about-fear/" class="blog-card">
         <div class="blog-card-tag">Bhagavad Gita · Fear</div>
         <div class="blog-card-title">What Does the Bhagavad Gita Say About Fear?</div>
         <div class="blog-card-excerpt">Four cited verses with Sanskrit, transliteration, and practical guidance for modern life — BG 2.14, 2.19, 2.62, and 16.1.</div>
         <div class="blog-card-meta">April 2026 · 5 min read · <span>Read →</span></div>
       </a>
-
       <a href="/blog" class="blog-all">View all posts →</a>
     </section>
 
-    <!-- LAUNCH AREA -->
-    <div class="launch-area">
-      <div class="launch-badge"><span class="pulse-dot"></span>Launching 2026</div>
+    <!-- FOOTER -->
+    <div class="footer-area">
       <p class="footer-links">
         <a href="mailto:admin@sanaatan.life">admin@sanaatan.life</a>
         &nbsp;·&nbsp; sanaatan.life
