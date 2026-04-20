@@ -53,11 +53,6 @@
       transition:background 0.2s,box-shadow 0.2s;letter-spacing:0.02em;}
     .cta-btn:hover{background:var(--gold-mid);box-shadow:0 4px 20px rgba(139,96,0,0.25);}
     .cta-sub{font-size:14px;color:var(--muted);margin-top:10px;}
-    .features{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0;animation:fadeUp 0.7s ease-out 0.25s both;}
-    .feature-pill{display:flex;align-items:center;gap:8px;background:var(--warm-white);
-      border:1px solid var(--border);border-radius:8px;padding:10px 18px;
-      font-size:16px;color:var(--ink-soft);}
-    .feature-pill .icon{font-size:18px;}
     .verse-block{background:var(--warm-white);border-left:4px solid var(--gold);
       border-radius:0 8px 8px 0;padding:24px 28px;margin:24px 0;
       animation:fadeUp 0.7s ease-out 0.3s both;}
@@ -66,31 +61,82 @@
     .verse-english{font-size:18px;color:var(--ink-soft);font-style:italic;
       line-height:1.75;margin-bottom:10px;}
     .verse-source{font-size:14px;color:var(--muted);letter-spacing:0.05em;}
+
+    /* PRICING LINK */
     .pricing-link-section{text-align:center;margin:32px 0;padding:24px;
       background:var(--warm-white);border:1px solid var(--border);border-radius:10px;}
     .pricing-link-section p{font-size:16px;color:var(--muted);margin-bottom:12px;}
-    .pricing-link-section a{color:var(--gold);font-weight:600;text-decoration:none;font-size:16px;}
+    .pricing-link-section a{color:var(--gold);font-weight:600;text-decoration:none;font-size:16px;cursor:pointer;}
     .pricing-link-section a:hover{text-decoration:underline;}
+
+    /* PRICING MODAL */
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);
+      z-index:1000;align-items:center;justify-content:center;padding:20px;}
+    .modal-overlay.active{display:flex;}
+    .modal-box{background:var(--cream);border-radius:14px;padding:32px 28px;
+      max-width:500px;width:100%;max-height:90vh;overflow-y:auto;
+      position:relative;animation:fadeUp 0.25s ease-out both;}
+    .modal-close{position:absolute;top:16px;right:20px;background:none;border:none;
+      font-size:22px;color:var(--muted);cursor:pointer;line-height:1;}
+    .modal-close:hover{color:var(--ink);}
+    .modal-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;
+      color:var(--ink);margin-bottom:6px;}
+    .modal-sub{font-size:14px;color:var(--muted);margin-bottom:24px;}
+    .plan-card{background:var(--warm-white);border:1px solid var(--border);
+      border-radius:10px;padding:16px 20px;margin-bottom:12px;
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:10px;}
+    .plan-card.featured{background:#FFF3DC;border:1.5px solid var(--gold);position:relative;}
+    .plan-badge{position:absolute;top:-11px;left:16px;background:var(--gold);color:white;
+      font-size:10px;font-weight:700;padding:2px 10px;border-radius:20px;
+      letter-spacing:0.1em;text-transform:uppercase;}
+    .plan-name{font-size:12px;font-weight:700;color:var(--muted);
+      text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;}
+    .plan-card.featured .plan-name{color:var(--gold);}
+    .plan-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+      color:var(--ink);margin-bottom:2px;}
+    .plan-desc{font-size:13px;color:var(--muted);}
+    .plan-btn{background:var(--gold);color:white;padding:9px 20px;border-radius:8px;
+      font-size:13px;text-decoration:none;font-weight:600;white-space:nowrap;flex-shrink:0;}
+    .plan-btn:hover{background:var(--gold-mid);}
+    .plan-btn.free{background:var(--border);color:var(--ink);}
+    .modal-note{font-size:12px;color:var(--muted);text-align:center;margin-top:16px;}
+
+    /* CAPTURE */
     .capture-section{animation:fadeUp 0.7s ease-out 0.4s both;margin-top:32px;
       padding-top:32px;border-top:1px solid var(--border);}
     .capture-heading{font-family:'Playfair Display',serif;font-size:24px;
       font-weight:600;color:var(--ink);margin-bottom:10px;}
     .capture-subtext{font-size:17px;color:var(--muted);margin-bottom:24px;line-height:1.7;}
-    .capture-form{display:flex;max-width:500px;border:2px solid var(--border);
+    .capture-fields{display:flex;flex-direction:column;gap:10px;max-width:500px;}
+    .capture-row{display:flex;border:2px solid var(--border);
       border-radius:10px;overflow:hidden;background:var(--warm-white);
       transition:border-color 0.2s,box-shadow 0.2s;}
-    .capture-form:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px rgba(139,96,0,0.1);}
-    .capture-input{flex:1;background:transparent;border:none;padding:16px 20px;
-      font-family:'Source Serif 4',serif;font-size:17px;color:var(--ink);
+    .capture-row:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px rgba(139,96,0,0.1);}
+    .capture-input{flex:1;background:transparent;border:none;padding:14px 18px;
+      font-family:'Source Serif 4',serif;font-size:16px;color:var(--ink);
       outline:none;min-width:0;}
     .capture-input::placeholder{color:#B0A090;}
     .capture-btn{background:var(--gold);border:none;border-left:2px solid var(--border);
-      padding:16px 24px;color:white;font-family:'Playfair Display',serif;
-      font-size:17px;font-weight:600;cursor:pointer;transition:background 0.2s;
+      padding:14px 22px;color:white;font-family:'Playfair Display',serif;
+      font-size:16px;font-weight:600;cursor:pointer;transition:background 0.2s;
       white-space:nowrap;flex-shrink:0;}
     .capture-btn:hover{background:var(--gold-mid);}
     .capture-btn:disabled{background:var(--border);cursor:not-allowed;}
-    .capture-note{font-size:14px;color:var(--muted);margin-top:12px;}
+    .phone-row{display:flex;border:2px solid var(--border);
+      border-radius:10px;overflow:hidden;background:var(--warm-white);
+      transition:border-color 0.2s;}
+    .phone-row:focus-within{border-color:var(--gold);}
+    .phone-prefix{padding:14px 14px 14px 18px;font-size:16px;color:var(--muted);
+      background:transparent;border:none;outline:none;white-space:nowrap;flex-shrink:0;}
+    .phone-input{flex:1;background:transparent;border:none;padding:14px 18px 14px 0;
+      font-family:'Source Serif 4',serif;font-size:16px;color:var(--ink);outline:none;}
+    .phone-input::placeholder{color:#B0A090;}
+    .capture-note{font-size:13px;color:var(--muted);margin-top:10px;}
+    .submit-btn-full{width:100%;max-width:500px;background:var(--gold);border:none;
+      border-radius:10px;padding:15px;color:white;font-family:'Playfair Display',serif;
+      font-size:17px;font-weight:600;cursor:pointer;transition:background 0.2s;margin-top:4px;}
+    .submit-btn-full:hover{background:var(--gold-mid);}
     .success-msg{display:none;background:#F0F7F2;border:1px solid #2E5C3A;
       border-radius:10px;padding:20px 24px;max-width:500px;}
     .success-msg p{font-size:18px;color:var(--green);font-weight:600;margin-bottom:4px;}
@@ -106,6 +152,8 @@
     .whatsapp-icon{font-size:22px;flex-shrink:0;}
     .whatsapp-text strong{display:block;font-size:16px;color:var(--ink);margin-bottom:2px;}
     .whatsapp-text span{font-size:13px;color:var(--muted);}
+
+    /* BLOG */
     .blog-section{margin-top:32px;padding-top:32px;border-top:1px solid var(--border);
       animation:fadeUp 0.7s ease-out 0.45s both;}
     .blog-label{font-size:12px;color:var(--gold);text-transform:uppercase;
@@ -114,7 +162,7 @@
       font-weight:600;color:var(--ink);margin-bottom:6px;}
     .blog-subtext{font-size:16px;color:var(--muted);margin-bottom:20px;line-height:1.6;}
     .blog-card{display:block;background:var(--warm-white);border:1px solid var(--border);
-      border-radius:10px;padding:22px 24px;text-decoration:none;
+      border-radius:10px;padding:22px 24px;text-decoration:none;margin-bottom:12px;
       transition:border-color 0.2s,box-shadow 0.2s;}
     .blog-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(0,0,0,0.06);}
     .blog-card-tag{font-size:12px;color:var(--gold);text-transform:uppercase;
@@ -124,35 +172,97 @@
     .blog-card-excerpt{font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:10px;}
     .blog-card-meta{font-size:13px;color:var(--muted);}
     .blog-card-meta span{color:var(--gold);font-weight:600;}
-    .blog-all{display:inline-block;margin-top:14px;font-size:14px;
+    .blog-all{display:inline-block;margin-top:4px;font-size:14px;
       color:var(--gold);text-decoration:none;font-weight:600;}
     .blog-all:hover{text-decoration:underline;}
+
+    /* FOOTER */
     .footer-area{text-align:center;margin-top:32px;padding-top:32px;
       border-top:1px solid var(--border);}
     .footer-links{font-size:14px;color:var(--muted);}
     .footer-links a{color:var(--gold);text-decoration:none;}
     .footer-links a:hover{text-decoration:underline;}
     .bottom-border{height:4px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%);margin-top:40px;}
+
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
     @media(max-width:560px){
       .page{padding:32px 20px 60px;}
-      .capture-form{flex-direction:column;}
-      .capture-btn{border-left:none;border-top:2px solid var(--border);padding:14px;}
-      .features{flex-direction:column;}
       .whatsapp-btn{padding:12px 16px;}
+      .plan-card{flex-direction:column;align-items:flex-start;}
+      .modal-box{padding:24px 20px;}
     }
   </style>
 </head>
 <body>
   <div class="top-border"></div>
+
   <nav style="background:var(--warm-white);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;gap:12px;">
-  <div style="width:8px;height:8px;background:var(--gold);transform:rotate(45deg);"></div>
-  <a href="/" style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:0.06em;">SANAATAN</a>
-  <div style="margin-left:auto;display:flex;gap:20px;align-items:center;">
-    <a href="/blog" style="font-size:14px;color:var(--muted);text-decoration:none;font-family:'Source Serif 4',serif;">Blog</a>
-    <a href="https://app.sanaatan.life" style="background:var(--gold);color:white;padding:6px 16px;border-radius:20px;font-size:13px;text-decoration:none;font-family:'Source Serif 4',serif;">Try free →</a>
+    <div style="width:8px;height:8px;background:var(--gold);transform:rotate(45deg);"></div>
+    <a href="/" style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:0.06em;">SANAATAN</a>
+    <div style="margin-left:auto;display:flex;gap:20px;align-items:center;">
+      <a href="/blog" style="font-size:14px;color:var(--muted);text-decoration:none;font-family:'Source Serif 4',serif;">Blog</a>
+      <a href="https://app.sanaatan.life" style="background:var(--gold);color:white;padding:6px 16px;border-radius:20px;font-size:13px;text-decoration:none;font-family:'Source Serif 4',serif;">Try free →</a>
+    </div>
+  </nav>
+
+  <!-- PRICING MODAL -->
+  <div class="modal-overlay" id="pricingModal" onclick="closePricingModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('pricingModal').classList.remove('active')">✕</button>
+      <h2 class="modal-title">Simple, transparent plans</h2>
+      <p class="modal-sub">All prices GST inclusive. No hidden fees.</p>
+
+      <div class="plan-card">
+        <div>
+          <div class="plan-name">Free</div>
+          <div class="plan-price">₹0</div>
+          <div class="plan-desc">3 questions every day · No signup required</div>
+        </div>
+        <a href="https://app.sanaatan.life" class="plan-btn free">Try free →</a>
+      </div>
+
+      <div class="plan-card">
+        <div>
+          <div class="plan-name">Starter Pack</div>
+          <div class="plan-price">₹99</div>
+          <div class="plan-desc">15 questions · One-time, no expiry</div>
+        </div>
+        <a href="https://rzp.io/rzp/SntDwUYi" target="_blank" class="plan-btn">Buy →</a>
+      </div>
+
+      <div class="plan-card">
+        <div>
+          <div class="plan-name">Daily</div>
+          <div class="plan-price">₹299 <span style="font-size:13px;font-weight:400;color:var(--muted);">/month</span></div>
+          <div class="plan-desc">10 questions every day</div>
+        </div>
+        <a href="https://rzp.io/rzp/2NowaMx" target="_blank" class="plan-btn">Get started →</a>
+      </div>
+
+      <div class="plan-card featured" style="position:relative;">
+        <div class="plan-badge">Most Popular</div>
+        <div>
+          <div class="plan-name">Unlimited</div>
+          <div class="plan-price">₹499 <span style="font-size:13px;font-weight:400;color:var(--muted);">/month</span></div>
+          <div class="plan-desc">Unlimited questions · Priority answers</div>
+        </div>
+        <a href="https://rzp.io/rzp/apoetBwM" target="_blank" class="plan-btn">Get started →</a>
+      </div>
+
+      <div class="plan-card">
+        <div>
+          <div class="plan-name">Annual</div>
+          <div class="plan-price">₹2,999 <span style="font-size:13px;font-weight:400;color:var(--muted);">/year</span></div>
+          <div class="plan-desc">Unlimited questions · Save 50% vs monthly</div>
+        </div>
+        <a href="https://rzp.io/rzp/hlZLeN68" target="_blank" class="plan-btn">Get started →</a>
+      </div>
+
+      <p class="modal-note">Questions? Email <a href="mailto:admin@sanaatan.life" style="color:var(--gold);">admin@sanaatan.life</a></p>
+    </div>
   </div>
-</nav>
+
   <div class="page">
 
     <!-- BRAND -->
@@ -171,25 +281,17 @@
       <p class="brand-tagline">The Eternal Way</p>
     </header>
 
-   <!-- INTRO -->
-<section class="intro">
-  <p class="intro-lead">Life questions, answered by the<br/>
-  <em>actual verses of the Bhagavad Gita.</em></p>
-  <p class="intro-body">Every answer cites the exact chapter and verse — with Sanskrit, English, and alternate readings from different traditions. Not what an AI remembers about the Gita. The Gita itself.</p>
-</section>
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-lead">Life questions, answered by the<br/>
+      <em>actual verses of the Bhagavad Gita.</em></p>
+      <p class="intro-body">Every answer cites the exact chapter and verse — with Sanskrit, English, and alternate readings from different traditions. Not what an AI remembers about the Gita. The Gita itself.</p>
+    </section>
 
     <!-- PRIMARY CTA -->
     <div class="cta-wrap">
       <a href="https://app.sanaatan.life" class="cta-btn">Try it free →</a>
       <p class="cta-sub">3 free questions every day.</p>
-    </div>
-
-    <!-- FEATURES -->
-    <div class="features">
-      <div class="feature-pill"><span class="icon">📖</span><span>Bhagavad Gita</span></div>
-      <div class="feature-pill"><span class="icon">🪔</span><span>Upanishads</span></div>
-      <div class="feature-pill"><span class="icon">✦</span><span>Cited answers</span></div>
-      <div class="feature-pill"><span class="icon">देव</span><span>Sanskrit verses</span></div>
     </div>
 
     <!-- VERSE -->
@@ -217,90 +319,49 @@
 
     <hr class="divider" />
 
-    <!-- PRICING LINK -->
+    <!-- PRICING LINK - triggers modal -->
     <div class="pricing-link-section">
       <p>Start free with 3 questions per day. Need more?</p>
-      <a href="#pricing">See plans — from ₹299/month →</a>
-    </div>
-    <!-- PRICING SECTION -->
-<section id="pricing" style="margin:32px 0;padding-top:32px;border-top:1px solid var(--border);">
-  <p style="font-size:12px;color:var(--gold);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;">Pricing</p>
-  <h2 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:6px;">Simple, transparent plans</h2>
-  <p style="font-size:16px;color:var(--muted);margin-bottom:24px;line-height:1.6;">All prices GST inclusive. No hidden fees.</p>
-
-  <div style="display:grid;grid-template-columns:1fr;gap:12px;">
-
-    <!-- FREE -->
-    <div style="background:var(--warm-white);border:1px solid var(--border);border-radius:10px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <div>
-        <p style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Free</p>
-        <p style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:4px;">₹0</p>
-        <p style="font-size:14px;color:var(--muted);">3 questions every day · No signup required</p>
-      </div>
-      <a href="https://app.sanaatan.life" style="background:var(--border);color:var(--ink);padding:10px 24px;border-radius:8px;font-size:14px;text-decoration:none;font-weight:600;">Try free →</a>
+      <a onclick="document.getElementById('pricingModal').classList.add('active')">See plans — from ₹99 →</a>
     </div>
 
-    <!-- DAILY -->
-    <div style="background:var(--warm-white);border:1px solid var(--border);border-radius:10px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <div>
-        <p style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Daily</p>
-        <p style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:4px;">₹299 <span style="font-size:14px;font-weight:400;color:var(--muted);">/month</span></p>
-        <p style="font-size:14px;color:var(--muted);">10 questions every day</p>
-      </div>
-      <a href="https://rzp.io/rzp/2NowaMx" target="_blank" style="background:var(--gold);color:white;padding:10px 24px;border-radius:8px;font-size:14px;text-decoration:none;font-weight:600;">Get started →</a>
-    </div>
-
-    <!-- UNLIMITED -->
-    <div style="background:#FFF3DC;border:1.5px solid var(--gold);border-radius:10px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;position:relative;">
-      <div style="position:absolute;top:-12px;left:20px;background:var(--gold);color:white;font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;letter-spacing:0.1em;text-transform:uppercase;">Most Popular</div>
-      <div>
-        <p style="font-size:13px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Unlimited</p>
-        <p style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:4px;">₹499 <span style="font-size:14px;font-weight:400;color:var(--muted);">/month</span></p>
-        <p style="font-size:14px;color:var(--muted);">Unlimited questions · Priority answers</p>
-      </div>
-      <a href="https://rzp.io/rzp/apoetBwM" target="_blank" style="background:var(--gold);color:white;padding:10px 24px;border-radius:8px;font-size:14px;text-decoration:none;font-weight:600;">Get started →</a>
-    </div>
-
-    <!-- ANNUAL -->
-    <div style="background:var(--warm-white);border:1px solid var(--border);border-radius:10px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <div>
-        <p style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Annual</p>
-        <p style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:4px;">₹2,999 <span style="font-size:14px;font-weight:400;color:var(--muted);">/year</span></p>
-        <p style="font-size:14px;color:var(--muted);">Unlimited questions · Save 50% vs monthly</p>
-      </div>
-      <a href="https://rzp.io/rzp/hlZLeN68" target="_blank" style="background:var(--gold);color:white;padding:10px 24px;border-radius:8px;font-size:14px;text-decoration:none;font-weight:600;">Get started →</a>
-    </div>
-
-  </div>
-</section>
-<!-- BLOG SECTION -->
+    <!-- BLOG SECTION -->
     <section class="blog-section">
       <p class="blog-label">Scripture Wisdom</p>
       <h2 class="blog-heading">From the Blog</h2>
       <p class="blog-subtext">Cited answers from the Gita on life's deepest questions — with Sanskrit and practical guidance.</p>
+      <a href="/blog/what-does-bhagavad-gita-say-about-grief/" class="blog-card">
+        <div class="blog-card-tag">Bhagavad Gita · Grief & Loss</div>
+        <div class="blog-card-title">What Does the Bhagavad Gita Say About Grief?</div>
+        <div class="blog-card-excerpt">The Bhagavad Gita begins with grief. What Krishna teaches Arjuna about loss, the eternal soul, and the grief you carry today — with cited verses and Sanskrit.</div>
+        <div class="blog-card-meta">April 2026 · 6 min read · <span>Read →</span></div>
+      </a>
       <a href="/blog/what-does-bhagavad-gita-say-about-fear/" class="blog-card">
         <div class="blog-card-tag">Bhagavad Gita · Fear</div>
         <div class="blog-card-title">What Does the Bhagavad Gita Say About Fear?</div>
         <div class="blog-card-excerpt">Four cited verses with Sanskrit, transliteration, and practical guidance for modern life — BG 2.14, 2.19, 2.62, and 16.1.</div>
         <div class="blog-card-meta">April 2026 · 5 min read · <span>Read →</span></div>
       </a>
-      <a href="/blog/what-does-bhagavad-gita-say-about-grief/" class="blog-card">
-  <div class="blog-card-tag">Bhagavad Gita · Grief & Loss</div>
-  <div class="blog-card-title">What Does the Bhagavad Gita Say About Grief?</div>
-  <div class="blog-card-excerpt">The Bhagavad Gita begins with grief. What Krishna teaches Arjuna about loss, the eternal soul, and the grief you carry today — with cited verses and Sanskrit.</div>
-  <div class="blog-card-meta">April 2026 · 6 min read · <span>Read →</span></div>
-</a>
       <a href="/blog" class="blog-all">View all posts →</a>
     </section>
+
     <!-- CAPTURE SECTION -->
     <section class="capture-section">
       <h2 class="capture-heading">Stay connected</h2>
       <p class="capture-subtext">Get a daily verse and updates on new scriptures being added.</p>
       <form id="captureForm" onsubmit="handleSubmit(event)">
-        <div class="capture-form">
-          <input class="capture-input" type="email" id="emailInput"
-            placeholder="Your email address" required autocomplete="email" />
-          <button class="capture-btn" type="submit" id="submitBtn">Notify Me</button>
+        <div class="capture-fields">
+          <div class="capture-row">
+            <input class="capture-input" type="email" id="emailInput"
+              placeholder="Your email address" required autocomplete="email" />
+          </div>
+          <div class="phone-row">
+            <span class="phone-prefix">🇮🇳 +91</span>
+            <input class="phone-input" type="tel" id="phoneInput"
+              placeholder="WhatsApp number (optional)" autocomplete="tel"
+              maxlength="10" pattern="[0-9]{10}" />
+          </div>
+          <button class="submit-btn-full" type="submit" id="submitBtn">Notify Me →</button>
         </div>
       </form>
       <div class="success-msg" id="successMsg">
@@ -323,15 +384,13 @@
       </a>
     </section>
 
-    
-
     <!-- FOOTER -->
     <div class="footer-area">
       <p class="footer-links">
         <a href="mailto:admin@sanaatan.life">admin@sanaatan.life</a>
-&nbsp;·&nbsp; <a href="https://www.instagram.com/sanaatanway" target="_blank">Instagram</a>
-&nbsp;·&nbsp; <a href="https://twitter.com/SanaatanWay" target="_blank">Twitter</a>
-&nbsp;·&nbsp; <a href="https://app.sanaatan.life">Try the app →</a>
+        &nbsp;·&nbsp; <a href="https://www.instagram.com/sanaatanway" target="_blank">Instagram</a>
+        &nbsp;·&nbsp; <a href="https://twitter.com/SanaatanWay" target="_blank">Twitter</a>
+        &nbsp;·&nbsp; <a href="https://app.sanaatan.life">Try the app →</a>
       </p>
     </div>
 
@@ -339,14 +398,24 @@
   <div class="bottom-border"></div>
 
   <script>
+    function closePricingModal(e) {
+      if (e.target === document.getElementById('pricingModal')) {
+        document.getElementById('pricingModal').classList.remove('active');
+      }
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') document.getElementById('pricingModal').classList.remove('active');
+    });
+
     function handleSubmit(e) {
       e.preventDefault();
       const email = document.getElementById('emailInput').value;
+      const phone = document.getElementById('phoneInput').value;
       const btn = document.getElementById('submitBtn');
       btn.textContent = 'Joining...';
       btn.disabled = true;
       const leads = JSON.parse(localStorage.getItem('sanaatan_leads') || '[]');
-      leads.push({ email, ts: new Date().toISOString() });
+      leads.push({ email, phone, ts: new Date().toISOString() });
       localStorage.setItem('sanaatan_leads', JSON.stringify(leads));
       setTimeout(() => {
         document.getElementById('captureForm').style.display = 'none';
