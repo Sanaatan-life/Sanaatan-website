@@ -127,8 +127,10 @@
       border-radius:10px;overflow:hidden;background:var(--warm-white);
       transition:border-color 0.2s;}
     .phone-row:focus-within{border-color:var(--gold);}
-    .phone-prefix{padding:14px 14px 14px 18px;font-size:16px;color:var(--muted);
-      background:transparent;border:none;outline:none;white-space:nowrap;flex-shrink:0;}
+    .phone-prefix{padding:14px 6px 14px 14px;font-size:15px;color:var(--ink);
+      background:transparent;border:none;border-right:1px solid var(--border);
+      outline:none;white-space:nowrap;flex-shrink:0;cursor:pointer;
+      font-family:'Source Serif 4',serif;}
     .phone-input{flex:1;background:transparent;border:none;padding:14px 18px 14px 0;
       font-family:'Source Serif 4',serif;font-size:16px;color:var(--ink);outline:none;}
     .phone-input::placeholder{color:#B0A090;}
@@ -284,8 +286,8 @@
     <!-- INTRO -->
     <section class="intro">
       <p class="intro-lead">Life questions, answered by the<br/>
-      <em>actual verses of the Bhagavad Gita.</em></p>
-      <p class="intro-body">Every answer cites the exact chapter and verse — with Sanskrit, English, and alternate readings from different traditions. Not what an AI remembers about the Gita. The Gita itself.</p>
+      <em>actual verses of the Bhagavad Gita and Upanishads.</em></p>
+      <p class="intro-body">Every answer cites the exact chapter and verse — with Sanskrit, English, and alternate readings from different traditions. Not what an AI remembers about the scriptures. The scriptures themselves.</p>
     </section>
 
     <!-- PRIMARY CTA -->
@@ -356,10 +358,19 @@
               placeholder="Your email address" required autocomplete="email" />
           </div>
           <div class="phone-row">
-            <span class="phone-prefix">🇮🇳 +91</span>
+            <select class="phone-prefix" id="countryCode">
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+1-CA">🇨🇦 +1</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+65">🇸🇬 +65</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+64">🇳🇿 +64</option>
+              <option value="+27">🇿🇦 +27</option>
+            </select>
             <input class="phone-input" type="tel" id="phoneInput"
-              placeholder="WhatsApp number (optional)" autocomplete="tel"
-              maxlength="10" pattern="[0-9]{10}" />
+              placeholder="WhatsApp number (optional)" autocomplete="tel" />
           </div>
           <button class="submit-btn-full" type="submit" id="submitBtn">Notify Me →</button>
         </div>
@@ -411,11 +422,13 @@
       e.preventDefault();
       const email = document.getElementById('emailInput').value;
       const phone = document.getElementById('phoneInput').value;
+      const countryCode = document.getElementById('countryCode').value;
+      const fullPhone = phone ? countryCode.replace('-CA','') + phone : '';
       const btn = document.getElementById('submitBtn');
       btn.textContent = 'Joining...';
       btn.disabled = true;
       const leads = JSON.parse(localStorage.getItem('sanaatan_leads') || '[]');
-      leads.push({ email, phone, ts: new Date().toISOString() });
+      leads.push({ email, phone: fullPhone, ts: new Date().toISOString() });
       localStorage.setItem('sanaatan_leads', JSON.stringify(leads));
       setTimeout(() => {
         document.getElementById('captureForm').style.display = 'none';
