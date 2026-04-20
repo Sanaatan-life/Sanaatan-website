@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 7-Day Grief Journey | Sanaatan</title>
+  <meta name="description" content="One verse. One reflection. Seven days. A free email journey through what the Bhagavad Gita and Upanishads say about grief, loss, and what comes after." />
+  <link rel="canonical" href="https://sanaatan.life/grief/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:#FAF6EF;--warm-white:#FFFDF8;--ink:#1C1208;
+      --ink-soft:#3D2B00;--gold:#8B6000;--gold-mid:#A07010;
+      --gold-light:#C49A20;--border:#DDD0B8;--muted:#6B5C3E;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{min-height:100vh;background:var(--cream);color:var(--ink);
+      font-family:'Source Serif 4',Georgia,serif;font-size:18px;
+      line-height:1.7;-webkit-font-smoothing:antialiased;}
+    .top-border{height:6px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%);}
+    nav{background:var(--warm-white);border-bottom:1px solid var(--border);
+      padding:12px 24px;display:flex;align-items:center;gap:12px;}
+    .nav-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);}
+    .nav-brand{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;
+      color:var(--ink);text-decoration:none;letter-spacing:0.06em;}
+    .nav-links{margin-left:auto;display:flex;gap:20px;align-items:center;}
+    .nav-links a{font-size:14px;color:var(--muted);text-decoration:none;}
+    .nav-cta{background:var(--gold);color:white !important;padding:6px 16px;
+      border-radius:20px;font-size:13px !important;}
+
+    .page{max-width:640px;margin:0 auto;padding:56px 32px 80px;}
+
+    /* HERO */
+    .hero{text-align:center;margin-bottom:48px;}
+    .hero-label{font-size:12px;color:var(--gold);text-transform:uppercase;
+      letter-spacing:0.2em;margin-bottom:20px;}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(32px,6vw,48px);
+      font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:20px;}
+    .hero-subtitle{font-size:18px;color:var(--muted);line-height:1.7;
+      max-width:480px;margin:0 auto 32px;}
+
+    /* WHAT YOU GET */
+    .days-preview{margin:0 auto 48px;max-width:520px;}
+    .days-heading{font-family:'Playfair Display',serif;font-size:20px;
+      font-weight:600;color:var(--ink);margin-bottom:20px;text-align:center;}
+    .day-row{display:flex;align-items:flex-start;gap:16px;padding:14px 0;
+      border-bottom:1px solid var(--border);}
+    .day-row:last-child{border-bottom:none;}
+    .day-num{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;
+      letter-spacing:0.1em;min-width:44px;padding-top:2px;}
+    .day-text{font-size:16px;color:var(--ink-soft);line-height:1.5;}
+    .day-text strong{color:var(--ink);display:block;margin-bottom:2px;}
+
+    /* VERSE TEASER */
+    .verse-block{background:var(--warm-white);border-left:4px solid var(--gold);
+      border-radius:0 8px 8px 0;padding:24px 28px;margin:0 auto 48px;max-width:520px;}
+    .verse-sanskrit{font-family:'Tiro Devanagari Hindi',serif;font-size:20px;
+      color:var(--gold);margin-bottom:10px;line-height:1.6;}
+    .verse-english{font-size:17px;color:var(--ink-soft);font-style:italic;
+      line-height:1.75;margin-bottom:8px;}
+    .verse-source{font-size:13px;color:var(--muted);}
+
+    /* FORM WRAPPER */
+    .form-section{background:var(--warm-white);border:1px solid var(--border);
+      border-radius:14px;padding:36px 32px;max-width:520px;margin:0 auto 48px;}
+    .form-heading{font-family:'Playfair Display',serif;font-size:24px;
+      font-weight:600;color:var(--ink);margin-bottom:6px;text-align:center;}
+    .form-sub{font-size:15px;color:var(--muted);text-align:center;
+      margin-bottom:28px;line-height:1.6;}
+
+    /* Override MailerLite button color to match brand */
+    #mlb2-40138341 .ml-form-embedSubmit button {
+      background-color: #8B6000 !important;
+    }
+    #mlb2-40138341 .ml-form-embedSubmit button:hover {
+      background-color: #A07010 !important;
+    }
+    #mlb2-40138341 .ml-form-embedWrapper {
+      background-color: transparent !important;
+    }
+
+    /* REASSURANCE */
+    .reassurance{text-align:center;font-size:14px;color:var(--muted);
+      margin-bottom:48px;}
+    .reassurance span{margin:0 8px;}
+
+    /* BLOG LINK */
+    .blog-link-section{text-align:center;padding:32px 0;
+      border-top:1px solid var(--border);}
+    .blog-link-section p{font-size:16px;color:var(--muted);margin-bottom:12px;}
+    .blog-link-section a{color:var(--gold);font-weight:600;text-decoration:none;font-size:16px;}
+    .blog-link-section a:hover{text-decoration:underline;}
+
+    /* FOOTER */
+    footer{text-align:center;padding:24px;font-size:13px;color:var(--muted);
+      border-top:1px solid var(--border);font-family:'Source Serif 4',serif;}
+    footer a{color:var(--gold);text-decoration:none;}
+
+    .bottom-border{height:4px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%);}
+
+    @media(max-width:560px){
+      .page{padding:36px 20px 60px;}
+      .form-section{padding:24px 20px;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-border"></div>
+
+<nav>
+  <div class="nav-diamond"></div>
+  <a href="/" class="nav-brand">SANAATAN</a>
+  <div class="nav-links">
+    <a href="/blog">Blog</a>
+    <a href="https://app.sanaatan.life" class="nav-cta">Ask the Scriptures →</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-label">A free 7-day email journey</p>
+    <h1 class="hero-title">What the Bhagavad Gita and Upanishads Say About Grief</h1>
+    <p class="hero-subtitle">One verse. One reflection. Seven days. Ancient wisdom on loss, the eternal soul, and what it means to carry grief without being consumed by it.</p>
+  </div>
+
+  <!-- VERSE TEASER -->
+  <div class="verse-block">
+    <p class="verse-sanskrit">न जायते म्रियते वा कदाचिन्</p>
+    <p class="verse-english">"The soul is never born, nor does it ever die. It is not slain when the body is slain."</p>
+    <p class="verse-source">Bhagavad Gita · Chapter 2, Verse 20 · Day 1 of the journey</p>
+  </div>
+
+  <!-- WHAT YOU GET -->
+  <div class="days-preview">
+    <p class="days-heading">Seven days. Seven teachings.</p>
+    <div class="day-row">
+      <span class="day-num">Day 1</span>
+      <div class="day-text"><strong>You are not alone in this grief</strong>The Bhagavad Gita begins with Arjuna collapsing in grief. Krishna sits with him first.</div>
+    </div>
+    <div class="day-row">
+      <span class="day-num">Day 2</span>
+      <div class="day-text"><strong>Why we grieve</strong>The Bhagavad Gita's honest diagnosis - what grief actually is and where it comes from.</div>
+    </div>
+    <div class="day-row">
+      <span class="day-num">Day 3</span>
+      <div class="day-text"><strong>When grief becomes a trap</strong>The difference between feeling grief and living inside it.</div>
+    </div>
+    <div class="day-row">
+      <span class="day-num">Day 4</span>
+      <div class="day-text"><strong>On the people we've lost</strong>What the Bhagavad Gita says directly about death and what follows.</div>
+    </div>
+    <div class="day-row">
+      <span class="day-num">Day 5</span>
+      <div class="day-text"><strong>Your duty doesn't pause for grief</strong>The hardest teaching - and why it's actually the most compassionate.</div>
+    </div>
+    <div class="day-row">
+      <span class="day-num">Day 6</span>
+      <div class="day-text"><strong>What the Upanishads add</strong>Tat tvam asi - the philosophy of connection that transcends loss.</div>
+    </div>
+    <div class="day-row">
+      <span class="day-num">Day 7</span>
+      <div class="day-text"><strong>What grief is really asking</strong>The question the scriptures have been building toward all week.</div>
+    </div>
+  </div>
+
+  <!-- MAILERLITE FORM -->
+  <div class="form-section">
+    <h2 class="form-heading">Begin the journey</h2>
+    <p class="form-sub">Free. Day 1 arrives tomorrow morning.<br/>Unsubscribe any time.</p>
+
+    <!-- MailerLite Universal -->
+    <script>
+      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+      .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+      (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      ml('account', '2278468');
+    </script>
+    <!-- End MailerLite Universal -->
+
+    <div class="ml-embedded" data-form="PXcuqv"></div>
+  </div>
+
+  <p class="reassurance">
+    <span>🔒 No spam</span>
+    <span>·</span>
+    <span>One email per day for 7 days</span>
+    <span>·</span>
+    <span>Unsubscribe any time</span>
+  </p>
+
+  <!-- BLOG LINK -->
+  <div class="blog-link-section">
+    <p>Want to read first before signing up?</p>
+    <a href="/blog/what-does-bhagavad-gita-say-about-grief/">Read the full blog post on grief →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    <a href="/">Sanaatan</a> &nbsp;·&nbsp;
+    <a href="/blog">Blog</a> &nbsp;·&nbsp;
+    <a href="https://app.sanaatan.life">Ask the Scriptures</a>
+  </p>
+  <p style="margin-top:8px;">© 2026 Sanaatan &nbsp;·&nbsp; सनातन &nbsp;·&nbsp; The Eternal Way</p>
+</footer>
+
+<div class="bottom-border"></div>
+
+</body>
+</html>
