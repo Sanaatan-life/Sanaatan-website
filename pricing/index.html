@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plans & Pricing — Sanaatan</title>
+  <meta name="description" content="Choose the plan that fits your spiritual journey. Ask questions of the Bhagavad Gita and Upanishads with cited verse answers." />
+  <link rel="canonical" href="https://sanaatan.life/pricing" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #FAF6EF;
+      --warm-white: #FFFDF8;
+      --ink: #1C1208;
+      --ink-soft: #3D2B00;
+      --gold: #8B6000;
+      --gold-light: #C49A20;
+      --gold-pale: #FFF8EC;
+      --border: #DDD0B8;
+      --muted: #6B5C3E;
+      --pale-gold: #FFF8EC;
+      --green: #2E5C3A;
+      --green-light: #EDF7ED;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .diamond { width: 10px; height: 10px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+    .brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: 0.06em; text-decoration: none; }
+    .nav-links { margin-left: auto; display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: white !important; padding: 7px 18px; border-radius: 20px; font-size: 13px !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 72px 24px 48px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Source Serif 4', serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 12px;
+    }
+    .gst-note {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* PLANS GRID */
+    .plans-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    /* PLAN CARD */
+    .plan-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .plan-card:hover {
+      transform: translateY(-3px);
+    }
+    .plan-card.featured {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: white;
+    }
+    .featured-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: white;
+      font-family: 'Source Serif 4', serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .plan-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .plan-card.featured .plan-name { color: white; }
+
+    .plan-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 24px;
+      font-style: italic;
+      min-height: 40px;
+    }
+    .plan-card.featured .plan-tagline { color: #B0A090; }
+
+    .plan-price {
+      margin-bottom: 8px;
+    }
+    .plan-price .amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .plan-card.featured .plan-price .amount { color: var(--gold-light); }
+    .plan-price .currency {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--muted);
+      vertical-align: super;
+      font-family: 'Source Serif 4', serif;
+    }
+    .plan-card.featured .plan-price .currency { color: #B0A090; }
+    .plan-price .period {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: 'Source Serif 4', serif;
+    }
+    .plan-card.featured .plan-price .period { color: #B0A090; }
+    .plan-free { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+
+    .annual-saving {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-family: 'Source Serif 4', serif;
+    }
+
+    .plan-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 20px 0;
+    }
+    .plan-card.featured .plan-divider { border-color: #3D2B00; }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .plan-features li {
+      font-size: 14px;
+      color: var(--ink-soft);
+      padding: 5px 0;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+    .plan-card.featured .plan-features li { color: #DDD0B8; }
+    .plan-features li::before {
+      content: '◆';
+      font-size: 7px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .plan-card.featured .plan-features li::before { color: var(--gold-light); }
+
+    .plan-btn {
+      display: block;
+      text-align: center;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+    }
+    .plan-btn.primary {
+      background: var(--gold);
+      color: white;
+    }
+    .plan-btn.primary:hover { background: var(--gold-light); }
+    .plan-btn.featured-btn {
+      background: var(--gold-light);
+      color: var(--ink);
+    }
+    .plan-btn.featured-btn:hover { background: #D4AA30; }
+    .plan-btn.outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+    }
+    .plan-btn.outline:hover { background: var(--pale-gold); }
+
+    /* COMPARISON TABLE */
+    .comparison-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      text-align: center;
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 36px;
+      font-style: italic;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .comparison-table thead tr {
+      border-bottom: 2px solid var(--border);
+    }
+    .comparison-table th {
+      padding: 14px 16px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .comparison-table th:first-child { text-align: left; color: var(--muted); font-size: 13px; font-family: 'Source Serif 4', serif; text-transform: uppercase; letter-spacing: 0.08em; }
+    .comparison-table th.featured-col { color: var(--gold); }
+    .comparison-table td {
+      padding: 13px 16px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink-soft);
+      vertical-align: middle;
+    }
+    .comparison-table td:first-child {
+      text-align: left;
+      font-size: 14px;
+      color: var(--ink);
+      font-weight: 400;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:nth-child(even) td { background: rgba(221,208,184,0.12); }
+    .comparison-table td.featured-col {
+      background: var(--pale-gold);
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .tick { color: var(--green); font-size: 16px; }
+    .cross { color: #B0A090; font-size: 16px; }
+    .featured-col.tick { color: var(--gold); }
+
+    /* FAQ */
+    .faq-section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .faq-q {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .faq-a {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      background: var(--ink);
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .footer-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: white;
+      margin-bottom: 12px;
+    }
+    .footer-cta p { color: #B0A090; font-size: 16px; margin-bottom: 28px; }
+    .footer-cta a {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-style: italic;
+      text-decoration: none;
+    }
+    .footer-cta a:hover { background: var(--gold-light); }
+
+    /* SITE FOOTER */
+    footer {
+      background: var(--warm-white);
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 16px; }
+      .nav-links { gap: 12px; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .comparison-table { font-size: 12px; }
+      .comparison-table th, .comparison-table td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="diamond"></div>
+    <a href="/" class="brand">SANAATAN</a>
+    <div class="nav-links">
+      <a href="/blog">Blog</a>
+      <a href="/grief">Journeys</a>
+      <a href="https://app.sanaatan.life" class="nav-cta">Ask the Scriptures →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Plans &amp; Pricing</div>
+    <h1>Your questions deserve real answers</h1>
+    <p>Every plan gives you cited answers with the actual Sanskrit verse — not summaries, not paraphrasing. The scripture itself.</p>
+    <p class="gst-note">All prices include GST. No hidden charges.</p>
+  </div>
+
+  <!-- PLANS -->
+  <div class="plans-section">
+    <div class="plans-grid">
+
+      <!-- FREE -->
+      <div class="plan-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-tagline">Start your journey. No commitment needed.</div>
+        <div class="plan-free">Free</div>
+        <hr class="plan-divider" />
+        <ul class="plan-features">
+          <li>3 questions every day</li>
+          <li>Answers cited with actual Sanskrit verses</li>
+          <li>Bhagavad Gita + 3 Upanishads</li>
+          <li>Resets at midnight daily</li>
+        </ul>
+        <a href="https://app.sanaatan.life" class="plan-btn outline">Begin free →</a>
+      </div>
+
+      <!-- STARTER -->
+      <div class="plan-card">
+        <div class="plan-name">Starter Pack</div>
+        <div class="plan-tagline">For when three questions aren't enough today.</div>
+        <div class="plan-price">
+          <span class="currency">₹</span><span class="amount">99</span>
+          <div class="period">one-time · 15 questions</div>
+        </div>
+        <hr class="plan-divider" />
+        <ul class="plan-features">
+          <li>15 questions — use anytime</li>
+          <li>No expiry date</li>
+          <li>Cited answers with Sanskrit</li>
+          <li>Bhagavad Gita + Upanishads</li>
+        </ul>
+        <a href="https://rzp.io/rzp/SntDwUYi" target="_blank" class="plan-btn primary">Get Starter Pack →</a>
+      </div>
+
+      <!-- UNLIMITED — FEATURED -->
+      <div class="plan-card featured">
+        <div class="featured-badge">Most popular</div>
+        <div class="plan-name">Unlimited</div>
+        <div class="plan-tagline">For seekers who want to go deep without limits.</div>
+        <div class="plan-price">
+          <span class="currency" style="color:#B0A090;">₹</span><span class="amount">499</span>
+          <div class="period">per month</div>
+        </div>
+        <hr class="plan-divider" />
+        <ul class="plan-features">
+          <li>Unlimited questions every day</li>
+          <li>Claude Sonnet — our most capable AI</li>
+          <li>Deeper, more nuanced answers</li>
+          <li>Full scripture library</li>
+          <li>Priority access to new features</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="https://rzp.io/rzp/apoetBwM" target="_blank" class="plan-btn featured-btn">Start Unlimited →</a>
+      </div>
+
+      <!-- DAILY -->
+      <div class="plan-card">
+        <div class="plan-name">Daily</div>
+        <div class="plan-tagline">A meaningful daily practice with the scriptures.</div>
+        <div class="plan-price">
+          <span class="currency">₹</span><span class="amount">299</span>
+          <div class="period">per month · 10 questions/day</div>
+        </div>
+        <hr class="plan-divider" />
+        <ul class="plan-features">
+          <li>10 questions every day</li>
+          <li>Cited answers with Sanskrit</li>
+          <li>Bhagavad Gita + Upanishads</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="https://rzp.io/rzp/2NowaMx" target="_blank" class="plan-btn primary">Start Daily →</a>
+      </div>
+
+      <!-- ANNUAL -->
+      <div class="plan-card">
+        <div class="plan-name">Annual</div>
+        <div class="plan-tagline">The complete Sanaatan experience for a full year.</div>
+        <div class="plan-price">
+          <span class="currency">₹</span><span class="amount">2,999</span>
+          <div class="period">per year · unlimited questions</div>
+        </div>
+        <div class="annual-saving">Save ₹2,989 vs monthly</div>
+        <hr class="plan-divider" />
+        <ul class="plan-features">
+          <li>Unlimited questions every day</li>
+          <li>Claude Sonnet — our most capable AI</li>
+          <li>Deeper, more nuanced answers</li>
+          <li>Full scripture library</li>
+          <li>Priority access to new features</li>
+          <li>Best value — under ₹250/month</li>
+        </ul>
+        <a href="https://rzp.io/rzp/hlZLeN68" target="_blank" class="plan-btn primary">Start Annual →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="comparison-section">
+    <h2 class="section-heading">Compare plans</h2>
+    <p class="section-sub">Everything you need to make the right choice.</p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Free</th>
+          <th>Starter</th>
+          <th>Daily</th>
+          <th class="featured-col">Unlimited</th>
+          <th>Annual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Questions per day</td>
+          <td>3</td>
+          <td>15 total</td>
+          <td>10</td>
+          <td class="featured-col">Unlimited</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>Cited Sanskrit verses</td>
+          <td><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+          <td class="featured-col"><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+        </tr>
+        <tr>
+          <td>Bhagavad Gita (701 verses)</td>
+          <td><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+          <td class="featured-col"><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+        </tr>
+        <tr>
+          <td>Upanishads library</td>
+          <td><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+          <td class="featured-col"><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+        </tr>
+        <tr>
+          <td>AI model</td>
+          <td>Haiku</td>
+          <td>Haiku</td>
+          <td>Haiku</td>
+          <td class="featured-col">Sonnet ✦</td>
+          <td>Sonnet ✦</td>
+        </tr>
+        <tr>
+          <td>Deeper, nuanced answers</td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td class="featured-col"><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+        </tr>
+        <tr>
+          <td>Early access to features</td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td class="featured-col"><span class="tick">✦</span></td>
+          <td><span class="tick">✦</span></td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>Free</td>
+          <td>₹99 once</td>
+          <td>₹299/mo</td>
+          <td class="featured-col">₹499/mo</td>
+          <td>₹2,999/yr</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <h2 class="section-heading">Questions</h2>
+    <p class="section-sub">Honest answers.</p>
+
+
+    <div class="faq-item">
+      <div class="faq-q">Can I cancel anytime?</div>
+      <div class="faq-a">Yes. Monthly plans can be cancelled anytime with no penalty. Your access continues until the end of the billing period.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do the free questions reset every day?</div>
+      <div class="faq-a">Yes — your 3 free questions reset at midnight every day. There is no need to pay if three questions a day is enough for you.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What scriptures does Sanaatan cover?</div>
+      <div class="faq-a">Currently the Bhagavad Gita (all 701 verses with Sanskrit, transliteration and English translation) and three principal Upanishads — Isha, Katha, and Mandukya. More Upanishads and the Ramayana are coming soon.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is the Starter Pack a subscription?</div>
+      <div class="faq-a">No. The Starter Pack is a one-time payment of ₹99 for 15 questions. There is no recurring charge. Questions do not expire.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Are prices GST inclusive?</div>
+      <div class="faq-a">Yes. All prices shown include GST. There are no hidden charges or fees.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <h2>Start with 3 free questions today</h2>
+    <p>No credit card required. Ask your first question in under a minute.</p>
+    <a href="https://app.sanaatan.life">Ask the Scriptures →</a>
+  </div>
+
+  <footer>
+    <p>
+      <a href="/">Sanaatan</a> &nbsp;·&nbsp;
+      <a href="/blog">Blog</a> &nbsp;·&nbsp;
+      <a href="/grief">Journeys</a> &nbsp;·&nbsp;
+      <a href="https://app.sanaatan.life">Ask the Scriptures</a>
+    </p>
+    <p style="margin-top:8px;">© 2026 Sanaatan &nbsp;·&nbsp; सनातन &nbsp;·&nbsp; The Eternal Way</p>
+  </footer>
+
+</body>
+</html>
